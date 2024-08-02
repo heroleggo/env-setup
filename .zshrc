@@ -69,7 +69,6 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
 source $ZSH/oh-my-zsh.sh
 
 
@@ -105,6 +104,31 @@ prompt pure
 
 
 alias dev="npm run dev"
+alias start="npm start"
+alias start:dev="npm run start:dev"
+alias start:admin="npm run start:admin"
+alias dps="docker ps"
+alias gbv="git branch -v"
+alias clr="clear"
 
+alias ni="npm install"
+
+alias mine="/Applications/Minecraft.app/Contents/MacOS/launcher"
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
+# global nvm setting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# flutter path
+export PATH=$HOME/development/flutter/bin:$PATH
+
+
+# jabba based JDK Setup
+[ -s "/Users/mac/.jabba/jabba.sh" ] && source "/Users/mac/.jabba/jabba.sh"
+
+export JAVA_HOME="/Users/mac/.jabba/jdk/amazon-corretto@1.17.0-0.35.1/Contents/Home"
+export CLASSPATH=.:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin
+
+# TODO: check warp setting crash with oh-my-zsh
